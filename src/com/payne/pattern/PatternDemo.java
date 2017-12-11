@@ -30,15 +30,17 @@ public class PatternDemo {
 
         String regEx8 = "^[A-Za-z0-9]{32}$";
 
+//        String regEx9 = "^(?!\\d+$).*\\d.*$";
+        String regEx9 = "^(?!\\d+$).{4,20}$";
 
         // 要验证的字符串
         String str = "service@xsoftlab.net";
 
-        String str1 = "999999F99999999999999999999999ac";
+        String str1 = "9999";
         // 邮箱验证规则
         String regEx = "[a-zA-Z_]{1,}[0-9]{0,}@(([a-zA-z0-9]-*){1,}\\.){1,3}[a-zA-z\\-]{1,}";
         // 编译正则表达式
-        Pattern pattern = Pattern.compile(regEx8);
+        Pattern pattern = Pattern.compile(regEx9);
         // 忽略大小写的写法
         // Pattern pat = Pattern.compile(regEx, Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(str1);
