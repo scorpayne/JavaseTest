@@ -4,7 +4,11 @@
  */
 package com.payne.entity;
 
+import sun.util.resources.cldr.ar.CalendarData_ar_LB;
+
 import java.io.Serializable;
+import java.util.Calendar;
+import java.util.Date;
 
 /**
  *
@@ -15,6 +19,8 @@ public class Person implements Serializable{
     private String identNo;
 
     private String name;
+
+    private Date birthday;
 
     public String getName() {
         return name;
@@ -38,6 +44,20 @@ public class Person implements Serializable{
     public Person(String identNo, String name) {
         this.identNo = identNo;
         this.name = name;
+    }
+
+    public Person(String identNo, String name, Date birthday) {
+        this.identNo = identNo;
+        this.name = name;
+        this.birthday = birthday;
+    }
+
+    public Date getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
     }
 
     @Override public boolean equals(Object o) {
